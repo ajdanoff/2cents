@@ -1,0 +1,3 @@
+[submodule "headHunterTest"]
+	path = headHunterTest
+	url = https://github.com/ikarkaz/headHunterTest
