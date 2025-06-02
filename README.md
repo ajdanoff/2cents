@@ -1,33 +1,55 @@
 # 2 Cents
 
-A draft implementation of Smoke Tests suite for the headhunter test puzzle.\
-https://github.com/ikarkaz/headHunterTest 
+A draft implementation of Smoke Tests suite for the [headhunter test puzzle](https://github.com/ikarkaz/headHunterTest).
 
 ## Description
 
-An example implementation of Windows GUI Test Suite on Ubuntu using wine + python + AutoIt.
-The project contains the following files and folders:
-* allure-report: generated html files
-* allure_results: raw allure data with logs
-* autoit-v3: a windows distributive of autoit
-* handbook: a folder with an unzipped xml file
-* headHunderTest: a folder with exe files necessary to test
-* screens: contains screenshots taken during the tests execution
-* autoit scripts:
-  * activation_script.au3
-  * conversion_script.au3
-  * exit_script.au3
-  * import_export_script.au3
-  * import_script.au3
-* config.ini: a configuration file
-* ED101.csv: a generated csv
-* handbook.zip: a downloaded handbook file
-* log.txt: a log file of testqawin.exe
-* PackedEPD.json: a generated json file
-* PackedEPD.xml: a generated xml file
-* README.md: a readme
-* requirements.txt: a list of requirements for python
-* testqawin.py: a python file with tests which contains a test plan.
+Description
+
+This project demonstrates an advanced cross-platform automation solution for Windows
+GUI testing on Ubuntu. Developed as a response to a real-world test problem from a
+Russian IT company, it showcases the integration of Wine, Python, and AutoIt to
+automate smoke tests for a Windows application.
+
+Key highlights include:
+
+* **Cross-platform automation**: Running Windows GUI tests on Ubuntu using Wine and AutoIt scripting.
+
+* **Python-based orchestration**: Modular test plan implemented in Python (testqawin.py) using Pytest framework.
+
+* **Detailed reporting**: Integration with Allure to generate comprehensive HTML reports and logs for easy analysis.
+
+* **Custom automation scripts**: Multiple AutoIt scripts automate key user workflows such as activation, conversion, import/export, and exit.
+
+* **Reproducible setup**: Use of virtual environments and configuration files to ensure consistent test execution.
+
+This project highlights skills in automation pipeline design, cross-platform compatibility
+solutions, and practical problem-solving in software quality assurance.
+
+Project Structure
+
+* `allure-report`: generated HTML report files
+* `allure_results`: raw Allure data with logs
+* `autoit-v3`: Windows distributive of AutoIt
+* `handbook`: folder with unzipped XML file
+* `headHunderTest`: folder with executable files for testing
+* `screens`: screenshots taken during test execution
+* **Autoit scripts**:
+   * `activation_script.au3` 
+   * `conversion_script.au3` 
+   * `exit_script.au3` 
+   * `import_export_script.au3` 
+   * `import_script.au3`
+
+* `config.ini`: configuration file
+* `ED101.csv`: generated CSV file
+* `handbook.zip`: downloaded handbook file
+* `log.txt`: log file of testqawin.exe
+* `PackedEPD.json`: generated JSON file
+* `PackedEPD.xml`: generated XML file
+* `README.md`: this readme file
+* `requirements.txt`: Python dependencies list
+* `testqawin.py`: Python test suite containing the test plan
 
 ## Getting Started
 
@@ -37,41 +59,40 @@ The project contains the following files and folders:
 * Wine
 * Python 3.13.3
 * AutoIt-V3
-* Python requirements are listed in requirements.txt
+* Python requirements are listed in `requirements.txt`
 
 ### Installing
 
-* clone project using git: ```git clone git@github.com:ajdanoff/2cents.git```
-* create virtual environment: ```python3 -m venv .venv```
-* ```source myenv/bin/activate```
-* ```pip install -r requirements.txt```
+```
+git clone git@github.com:ajdanoff/2cents.git
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-### Executing program
+### Executing Tests
 
-* run the program using pytest: 
+Run the test suite with:
 ```
 pytest testqawin.py::TestPlanQAWin --log-cli-level=INFO --alluredir=./allure_results
 ```
-* to see results of the test suite run:
+View the test report:
 ```
 allure serve allure_results
 ```
-* to generate a report for the test suite run:
+Generate a report for sharing:
 ```
 allure generate allure_results
 ```
 
 ## Help
-The autoit scripts are not scaled to different screen resolutions. You need to
-set your display to use the following resolution 1854 x 967.
-In case you have display authorization problems run the following script:
+The AutoIt scripts require a screen resolution of **1854 x 967**. 
+If you encounter display authorization issues, run:
 ```
 bash ./conn_to_disp.sh
 ```
 
 ## Authors
-
-Contributors names and contact info
 
 [Alexander Zhdanov](mailto:alexander.jdanoff@gmail.com)
 
@@ -82,9 +103,10 @@ Contributors names and contact info
 
 ## License
 
-This project is licensed under the [GNU GENERAL PUBLIC LICENSE V. 3] License - see the LICENSE.md file for details
+This project is licensed under the [GNU General Public License v3](./LICENSE).
 
 ## Acknowledgments
 
-Inspiration, take a look at.
+Inspired by the AutoIt community and the original headhunter test puzzle.
+
 * [autoit](https://www.autoitscript.com/autoit3/docs)
